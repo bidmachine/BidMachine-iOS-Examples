@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D9599E1621E49EB100CC25E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9599E1521E49EB100CC25E1 /* AppDelegate.swift */; };
-		D9599E1821E49EB100CC25E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9599E1721E49EB100CC25E1 /* ViewController.swift */; };
+		D9599E1821E49EB100CC25E1 /* InterstitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9599E1721E49EB100CC25E1 /* InterstitialVC.swift */; };
 		D9599E1B21E49EB100CC25E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9599E1921E49EB100CC25E1 /* Main.storyboard */; };
 		D9599E1D21E49EB100CC25E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9599E1C21E49EB100CC25E1 /* Assets.xcassets */; };
 		D9599E2021E49EB100CC25E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9599E1E21E49EB100CC25E1 /* LaunchScreen.storyboard */; };
@@ -20,7 +20,7 @@
 		3A8EE129742466A929921F7D /* Pods-Interstitial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Interstitial.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Interstitial/Pods-Interstitial.release.xcconfig"; sourceTree = "<group>"; };
 		D9599E1221E49EB100CC25E1 /* Interstitial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Interstitial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9599E1521E49EB100CC25E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D9599E1721E49EB100CC25E1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D9599E1721E49EB100CC25E1 /* InterstitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialVC.swift; sourceTree = "<group>"; };
 		D9599E1A21E49EB100CC25E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D9599E1C21E49EB100CC25E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9599E1F21E49EB100CC25E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				D9599E1521E49EB100CC25E1 /* AppDelegate.swift */,
-				D9599E1721E49EB100CC25E1 /* ViewController.swift */,
+				D9599E1721E49EB100CC25E1 /* InterstitialVC.swift */,
 				D9599E1921E49EB100CC25E1 /* Main.storyboard */,
 				D9599E1C21E49EB100CC25E1 /* Assets.xcassets */,
 				D9599E1E21E49EB100CC25E1 /* LaunchScreen.storyboard */,
@@ -185,7 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9599E1821E49EB100CC25E1 /* ViewController.swift in Sources */,
+				D9599E1821E49EB100CC25E1 /* InterstitialVC.swift in Sources */,
 				D9599E1621E49EB100CC25E1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
