@@ -1,6 +1,5 @@
-source 'https://github.com/appodeal/CocoaPods.git' 
-platform :ios, '9.0' 
-workspace 'BidMachine_iOS_Examples.xcworkspace'
+platform :ios, '9.0'
+workspace 'BidMachine-iOS-Examples.xcworkspace'
 use_frameworks!
 
 def bidmachine 

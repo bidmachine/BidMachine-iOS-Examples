@@ -2,13 +2,13 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Rewarded/Rewarded.xcodeproj">
+      location = "group:Banner/Banner.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Interstitial/Interstitial.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Banner/Banner.xcodeproj">
+      location = "group:Rewarded/Rewarded.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
