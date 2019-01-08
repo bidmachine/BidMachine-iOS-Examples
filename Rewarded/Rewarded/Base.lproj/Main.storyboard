@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--RewardedVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="RewardedVC" customModule="Rewarded" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Spa-6U-CES">
+                                <rect key="frame" x="66.5" y="318.5" width="55" height="30"/>
+                                <state key="normal" title="Load ad"/>
+                                <connections>
+                                    <action selector="loadRewardedVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L6A-LF-0lO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GpP-pq-nPu">
+                                <rect key="frame" x="244.5" y="318.5" width="74" height="30"/>
+                                <state key="normal" title="Present ad"/>
+                                <connections>
+                                    <action selector="presentRewardedVideo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bTv-Gu-9Sa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rewarded video ad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T09-d5-NOx">
+                                <rect key="frame" x="114.5" y="212" width="146.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="GpP-pq-nPu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="3/2" id="74O-Vo-S8M"/>
+                            <constraint firstItem="GpP-pq-nPu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="XrD-bC-z0E"/>
+                            <constraint firstItem="T09-d5-NOx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="azf-36-728"/>
+                            <constraint firstItem="Spa-6U-CES" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="1/2" id="iM4-Uy-sSC"/>
+                            <constraint firstItem="T09-d5-NOx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="2/3" id="n1o-DG-VeS"/>
+                            <constraint firstItem="Spa-6U-CES" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="voi-Vf-bSD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="presentButton" destination="GpP-pq-nPu" id="Hjy-rR-VfY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
