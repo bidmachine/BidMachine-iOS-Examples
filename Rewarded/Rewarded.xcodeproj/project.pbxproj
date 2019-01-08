@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C5869EF9E9971D6E3A8784E /* libPods-Rewarded.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C4FD492057F52820A2D6EC2 /* libPods-Rewarded.a */; };
+		CBA354B661AF2FD11CCA975B /* Pods_Rewarded.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 326A42A6F4A490347DDEA1CF /* Pods_Rewarded.framework */; };
 		D9599E3421E49ECF00CC25E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9599E3321E49ECF00CC25E1 /* AppDelegate.swift */; };
 		D9599E3621E49ECF00CC25E1 /* RewardedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9599E3521E49ECF00CC25E1 /* RewardedVC.swift */; };
 		D9599E3921E49ECF00CC25E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9599E3721E49ECF00CC25E1 /* Main.storyboard */; };
@@ -16,8 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		326A42A6F4A490347DDEA1CF /* Pods_Rewarded.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rewarded.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E06C0582138A257CA5082A1 /* Pods-Rewarded.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rewarded.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Rewarded/Pods-Rewarded.release.xcconfig"; sourceTree = "<group>"; };
-		7C4FD492057F52820A2D6EC2 /* libPods-Rewarded.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Rewarded.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A601B32FED5CF3E6BF1AF5A6 /* Pods-Rewarded.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rewarded.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Rewarded/Pods-Rewarded.debug.xcconfig"; sourceTree = "<group>"; };
 		D9599E3021E49ECF00CC25E1 /* Rewarded.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rewarded.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9599E3321E49ECF00CC25E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -33,7 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C5869EF9E9971D6E3A8784E /* libPods-Rewarded.a in Frameworks */,
+				CBA354B661AF2FD11CCA975B /* Pods_Rewarded.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +83,7 @@
 		E500B644EF1D06B770CBD9B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7C4FD492057F52820A2D6EC2 /* libPods-Rewarded.a */,
+				326A42A6F4A490347DDEA1CF /* Pods_Rewarded.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

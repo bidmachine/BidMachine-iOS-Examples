@@ -12,10 +12,11 @@
 		D9599E1B21E49EB100CC25E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9599E1921E49EB100CC25E1 /* Main.storyboard */; };
 		D9599E1D21E49EB100CC25E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9599E1C21E49EB100CC25E1 /* Assets.xcassets */; };
 		D9599E2021E49EB100CC25E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9599E1E21E49EB100CC25E1 /* LaunchScreen.storyboard */; };
-		F37DC27E19FE9AD4B4EC4FF9 /* libPods-Interstitial.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4998CD14892FEAA6231397F /* libPods-Interstitial.a */; };
+		DD7BD257FB8FC1140B6042CD /* Pods_Interstitial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29F35EF0F9DE0BCAF60D3D37 /* Pods_Interstitial.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		29F35EF0F9DE0BCAF60D3D37 /* Pods_Interstitial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Interstitial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B987CD536C16518A810BC34 /* Pods-Interstitial.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Interstitial.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Interstitial/Pods-Interstitial.debug.xcconfig"; sourceTree = "<group>"; };
 		3A8EE129742466A929921F7D /* Pods-Interstitial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Interstitial.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Interstitial/Pods-Interstitial.release.xcconfig"; sourceTree = "<group>"; };
 		D9599E1221E49EB100CC25E1 /* Interstitial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Interstitial.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -25,7 +26,6 @@
 		D9599E1C21E49EB100CC25E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9599E1F21E49EB100CC25E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9599E2121E49EB100CC25E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F4998CD14892FEAA6231397F /* libPods-Interstitial.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Interstitial.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,7 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F37DC27E19FE9AD4B4EC4FF9 /* libPods-Interstitial.a in Frameworks */,
+				DD7BD257FB8FC1140B6042CD /* Pods_Interstitial.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,7 +43,7 @@
 		81D163F1F43723CFA6E5F368 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F4998CD14892FEAA6231397F /* libPods-Interstitial.a */,
+				29F35EF0F9DE0BCAF60D3D37 /* Pods_Interstitial.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
