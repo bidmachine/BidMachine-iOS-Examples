@@ -10,18 +10,19 @@ import UIKit
 import BidMachine
 
 class RewardedVC: UIViewController {
-
-    private let rewarded = BDMRewarded()
-    private let request = BDMRequest()
+    private lazy var rewarded: BDMRewarded = {
+        return BDMRewarded()
+    }()
+    
+    private lazy var request: BDMRequest = {
+        return BDMRequest()
+    }()
     
     @IBOutlet weak var presentButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         rewarded.delegate = self
-        BDMSdk.shared().startSession(withSellerID: "1") {
-            print("BidMachine sdk was initialized.")
-        }
     }
 
 
