@@ -16,8 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        BDMSdk.shared().startSession(withSellerID: "1") {
-            print("BidMachine sdk was initialized.")
+        let configuration = BDMSdkConfiguration()
+        configuration.testMode = true
+        BDMSdk.shared().startSession(withSellerID: "1", configuration: configuration) {
+            print("BidMachine SDK has initialized")
         }
         return true
     }

@@ -22,9 +22,9 @@ class RewardedVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presentButton.isEnabled = false
         rewarded.delegate = self
     }
-
 
     @IBAction func loadRewardedVideo(_ sender: UIButton) {
         rewarded.make(request)
@@ -42,12 +42,12 @@ extension RewardedVC: BDMRewardedDelegate {
     }
     
     func rewarded(_ rewarded: BDMRewarded, failedWithError error: Error) {
-        print("Rewarded failed with error")
+        print("Rewarded failed on loading with error: \(error)")
         presentButton.isEnabled = false
     }
     
     func rewarded(_ rewarded: BDMRewarded, failedToPresentWithError error: Error) {
-        print("Rewarded failed to present with error")
+        print("Rewarded failed to present with error with error: \(error)")
         presentButton.isEnabled = false
     }
     
@@ -56,21 +56,21 @@ extension RewardedVC: BDMRewardedDelegate {
     }
     
     func rewardedDidExpire(_ rewarded: BDMRewarded) {
-        print("Rewarded did expire")
+        print("Rewarded expired")
         presentButton.isEnabled = false
     }
     
     func rewardedDidDismiss(_ rewarded: BDMRewarded) {
-        print("Rewarded did dismiss")
+        print("Rewarded dismissed")
         presentButton.isEnabled = false
     }
     
     func rewardedRecieveUserInteraction(_ rewarded: BDMRewarded) {
-        print("Rewarded did receive user interaction")
+        print("Rewarded received user interaction")
     }
     
     func rewardedFinishRewardAction(_ rewarded: BDMRewarded) {
-        print("Rewarded video has been finished")
+        print("Rewarded video has finished")
     }
 }
 
