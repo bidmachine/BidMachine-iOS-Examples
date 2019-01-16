@@ -19,8 +19,8 @@ class InterstitialVC: UIViewController {
         return BDMInterstitial()
     }()
     
-    private lazy var request: BDMRequest = {
-        return BDMRequest()
+    private lazy var request: BDMInterstitialRequest = {
+        return BDMInterstitialRequest()
     }()
     
     override func viewDidLoad() {
@@ -30,8 +30,8 @@ class InterstitialVC: UIViewController {
     }
 
     @IBAction func loadNonVideoAd(_ sender: UIButton) {
-        interstitial.type = selectInterstitialType()
-        interstitial.make(request)
+        request.type = selectInterstitialType()
+        request.perform(with: self)
     }
     
     @IBAction func presentInterstitial(_ sender: UIButton) {
@@ -49,13 +49,29 @@ class InterstitialVC: UIViewController {
     }
 }
 
-extension InterstitialVC: BDMInterstitialDelegate {
-    func interstitialWillPresent(_ interstitial: BDMInterstitial) {
-        print("Interstitial will present ad")
+extension InterstitialVC: BDMRequestDelegate {
+    func request(_ request: BDMRequest, failedWithError error: Error) {
+        print("Auctuion failed")
     }
     
-    func interstitialDidExpire(_ interstitial: BDMInterstitial) {
-        print("Interstitial expired")
+    func request(_ request: BDMRequest, completeWith info: BDMAuctionInfo) {
+        print("Auctuion complete")
+        interstitial.populate(with: request as! BDMInterstitialRequest)
+    }
+    
+    func requestDidExpire(_ request: BDMRequest) {
+        print("Auction expired")
+    }
+}
+
+extension InterstitialVC: BDMInterstitialDelegate {
+    func interstitialReady(toPresent interstitial: BDMInterstitial) {
+        print("Interstitial is ready to present ad")
+        presentButton.isEnabled = true
+    }
+    
+    func interstitialWillPresent(_ interstitial: BDMInterstitial) {
+        print("Interstitial will present ad")
     }
     
     func interstitialDidDismiss(_ interstitial: BDMInterstitial) {
@@ -67,11 +83,6 @@ extension InterstitialVC: BDMInterstitialDelegate {
         print("Interstitial received user interaction")
     }
     
-    func interstitial(_ interstitial: BDMInterstitial, readyToPresentAd auctionInfo: BDMAuctionInfo) {
-        print("Interstitial is ready to present ad")
-        presentButton.isEnabled = true
-    }
-    
     func interstitial(_ interstitial: BDMInterstitial, failedWithError error: Error) {
         print("Interstitial failed on loading with error: \(error)")
         presentButton.isEnabled = false
@@ -81,6 +92,5 @@ extension InterstitialVC: BDMInterstitialDelegate {
         print("Interstitial failed to present ad with error: \(error)")
         presentButton.isEnabled = false
     }
-    
 }
 

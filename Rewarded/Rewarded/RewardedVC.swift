@@ -14,8 +14,8 @@ class RewardedVC: UIViewController {
         return BDMRewarded()
     }()
     
-    private lazy var request: BDMRequest = {
-        return BDMRequest()
+    private lazy var request: BDMRewardedRequest = {
+        return BDMRewardedRequest()
     }()
     
     @IBOutlet weak var presentButton: UIButton!
@@ -27,7 +27,7 @@ class RewardedVC: UIViewController {
     }
 
     @IBAction func loadRewardedVideo(_ sender: UIButton) {
-        rewarded.make(request)
+        request.perform(with: self)
     }
     
     @IBAction func presentRewardedVideo(_ sender: UIButton) {
@@ -35,12 +35,27 @@ class RewardedVC: UIViewController {
     }
 }
 
+extension RewardedVC: BDMRequestDelegate {
+    func request(_ request: BDMRequest, failedWithError error: Error) {
+        print("Auctuion failed")
+    }
+    
+    func request(_ request: BDMRequest, completeWith info: BDMAuctionInfo) {
+        print("Auctuion failed")
+        rewarded.populate(with: request as! BDMRewardedRequest)
+    }
+    
+    func requestDidExpire(_ request: BDMRequest) {
+        print("Auction expired")
+    }
+}
+
 extension RewardedVC: BDMRewardedDelegate {
-    func rewarded(_ rewarded: BDMRewarded, readyToPresentAd auctionInfo: BDMAuctionInfo) {
+    func rewardedReady(toPresent rewarded: BDMRewarded) {
         print("Rewarded is ready to present ad")
         presentButton.isEnabled = true
     }
-    
+
     func rewarded(_ rewarded: BDMRewarded, failedWithError error: Error) {
         print("Rewarded failed on loading with error: \(error)")
         presentButton.isEnabled = false
@@ -53,11 +68,6 @@ extension RewardedVC: BDMRewardedDelegate {
     
     func rewardedWillPresent(_ rewarded: BDMRewarded) {
         print("Rewarded will present ad")
-    }
-    
-    func rewardedDidExpire(_ rewarded: BDMRewarded) {
-        print("Rewarded expired")
-        presentButton.isEnabled = false
     }
     
     func rewardedDidDismiss(_ rewarded: BDMRewarded) {
