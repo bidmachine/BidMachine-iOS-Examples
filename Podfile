@@ -2,6 +2,7 @@ platform :ios, '9.0'
 workspace 'BidMachine-iOS-Examples.xcworkspace'
 use_frameworks!
 
+
 def bidmachine 
     pod "BidMachine", "~> 1.0"
 end

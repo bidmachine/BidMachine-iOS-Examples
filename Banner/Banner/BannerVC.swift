@@ -19,8 +19,8 @@ class BannerVC: UIViewController {
         return bannerView
     }()
     
-    private lazy var request: BDMRequest = {
-        return BDMRequest()
+    private lazy var request: BDMBannerRequest = {
+        return BDMBannerRequest()
     }()
     
     override func viewDidLoad() {
@@ -31,8 +31,8 @@ class BannerVC: UIViewController {
     }
 
     @IBAction func loadBanner(_ sender: UIButton) {
-        bannerView.adSize = .size320x50
-        bannerView.make(request)
+        request.adSize = .size320x50
+        request.perform(with: self)
     }
     
     @IBAction func removeBanner(_ sender: UIButton) {
@@ -41,30 +41,44 @@ class BannerVC: UIViewController {
     }
     
     private func configureBannerView() {
-        let bannerViewWidthConstraint = bannerView.widthAnchor.constraint(equalToConstant: CGSizeFromBDMSize(bannerView.adSize).width)
-        let bannerViewHeightConstraint = bannerView.heightAnchor.constraint(equalToConstant: CGSizeFromBDMSize(bannerView.adSize).height)
+        let bannerViewWidthConstraint = bannerView.widthAnchor.constraint(equalToConstant: CGSizeFromBDMSize(request.adSize).width)
+        let bannerViewHeightConstraint = bannerView.heightAnchor.constraint(equalToConstant: CGSizeFromBDMSize(request.adSize).height)
         let bannerViewHorizontalCenter = bannerView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
         let bannerViewVerticalCenter = bannerView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -120)
-        NSLayoutConstraint.activate([bannerViewWidthConstraint, bannerViewHeightConstraint, bannerViewVerticalCenter, bannerViewHorizontalCenter])
+        NSLayoutConstraint.activate([bannerViewWidthConstraint,
+                                     bannerViewHeightConstraint,
+                                     bannerViewVerticalCenter,
+                                     bannerViewHorizontalCenter])
+    }
+}
+
+extension BannerVC: BDMRequestDelegate {
+    func request(_ request: BDMRequest, failedWithError error: Error) {
+        print("Auctuion failed");
+    }
+    
+    func request(_ request: BDMRequest, completeWith info: BDMAuctionInfo) {
+        bannerView.populate(with: request as! BDMBannerRequest)
+        print("Auction complete")
+    }
+    
+    func requestDidExpire(_ request: BDMRequest) {
+        print("Auction expired")
     }
 }
 
 extension BannerVC: BDMBannerDelegate {
-    func bannerViewDidExpire(_ bannerView: BDMBannerView) {
-        print("Banner view expired")
-    }
-    
-    func bannerViewRecieveUserInteraction(_ bannerView: BDMBannerView) {
-        print("Banner view received user interaction")
-    }
-    
-    func bannerView(_ bannerView: BDMBannerView, readyToPresentAd auctionInfo: BDMAuctionInfo) {
+    func bannerViewReady(toPresent bannerView: BDMBannerView) {
         print("Banner view is ready to present ad")
         removeBannerButton.isEnabled = true
         self.view.addSubview(self.bannerView)
         configureBannerView()
     }
     
+    func bannerViewRecieveUserInteraction(_ bannerView: BDMBannerView) {
+        print("Banner view received user interaction")
+    }
+
     func bannerView(_ bannerView: BDMBannerView, failedWithError error: Error) {
         print("Banner view failed on loading with error: \(error)")
     }

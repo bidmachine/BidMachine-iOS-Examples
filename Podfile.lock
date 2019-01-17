@@ -1,16 +1,16 @@
 PODS:
-  - BidMachine (1.0.0)
+  - BidMachine (1.0.1)
 
 DEPENDENCIES:
   - BidMachine (~> 1.0)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/appodeal/CocoaPods.git:
     - BidMachine
 
 SPEC CHECKSUMS:
-  BidMachine: e13b45d1fc2385f75d93f4eebf9b496e91c3f818
+  BidMachine: 5af3b42c001536dd3fb0ef48a53ee1008ad3b486
 
-PODFILE CHECKSUM: 564f7e49b90f572d72f9cdeaf4139b6bc4be4186
+PODFILE CHECKSUM: 1578b5754d9ca45ebc0c998715ab8468834fb18a
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0.beta.2
