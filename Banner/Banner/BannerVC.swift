@@ -82,4 +82,16 @@ extension BannerVC: BDMBannerDelegate {
     func bannerView(_ bannerView: BDMBannerView, failedWithError error: Error) {
         print("Banner view failed on loading with error: \(error)")
     }
+    
+    func bannerViewWillLeaveApplication(_ bannerView: BDMBannerView) {
+        print("Banner view will leave application")
+    }
+    
+    func bannerViewWillPresentScreen(_ bannerView: BDMBannerView) {
+        print("Banner view will present modal screen")
+    }
+    
+    func bannerViewDidDissmissScreen(_ bannerView: BDMBannerView) {
+        print("Banner view did dismiss modal screen")
+    }
 }
