@@ -91,7 +91,7 @@ extension BannerVC: BDMBannerDelegate {
         print("Banner view will present modal screen")
     }
     
-    func bannerViewDidDissmissScreen(_ bannerView: BDMBannerView) {
+    func bannerViewDidDismissScreen(_ bannerView: BDMBannerView) {
         print("Banner view did dismiss modal screen")
     }
 }
