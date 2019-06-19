@@ -4,7 +4,7 @@ use_frameworks!
 
 
 def bidmachine 
-    pod "BidMachine", "1.1.0"
+    pod "BidMachine", "1.1.1"
 end
 
 target 'Banner' do 
