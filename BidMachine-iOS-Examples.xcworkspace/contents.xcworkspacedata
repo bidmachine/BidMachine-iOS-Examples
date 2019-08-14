@@ -11,6 +11,9 @@
       location = "group:Rewarded/Rewarded.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:HeaderBiddingSample/HeaderBiddingSample.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

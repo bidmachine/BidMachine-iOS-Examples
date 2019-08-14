@@ -2,9 +2,11 @@ platform :ios, '9.0'
 workspace 'BidMachine-iOS-Examples.xcworkspace'
 use_frameworks!
 
+source 'https://github.com/appodeal/CocoaPods.git'
+source 'https://github.com/CocoaPods/Specs.git'
 
 def bidmachine 
-    pod "BidMachine", "1.1.1"
+    pod "BidMachine", "1.3.0"
 end
 
 target 'Banner' do 
@@ -19,5 +21,15 @@ end
 
 target 'Rewarded' do 
     project 'Rewarded/Rewarded.xcodeproj' 
+    bidmachine
+end
+
+target 'HeaderBiddingSample' do
+    project 'HeaderBiddingSample/HeaderBiddingSample.xcodeproj'
+    pod "BidMachine/FacebookAdapter", "1.3.0"
+    pod "BidMachine/MyTargetAdapter", "1.3.0"
+    pod "BidMachine/VungleAdapter", "1.3.0"
+    pod "BidMachine/TapjoyAdapter", "1.3.0"
+    pod "BidMachine/AdColonyAdapter", "1.3.0"
     bidmachine
 end
