@@ -56,6 +56,7 @@ final class ViewController: UIViewController {
         }
         let configuration: BDMSdkConfiguration = BDMSdkConfiguration()
         configuration.networkConfigurations = configEntities
+        BDMSdk.shared().enableLogging = true
         BDMSdk.shared().startSession(withSellerID: "5", configuration: configuration) {
             print("BidMachine SDK was successfully initialized!")
         }
