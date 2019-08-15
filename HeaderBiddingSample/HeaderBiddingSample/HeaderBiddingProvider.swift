@@ -10,6 +10,12 @@ import Foundation
 import BidMachine.HeaderBidding
 
 final class HeaderBiddingProvider {
+    fileprivate struct Keys  {
+        static let networkClass = "network_class"
+        static let networkName = "network"
+        static let adUnits = "ad_units"
+        static let format = "format"
+    }
     
     static let shared: HeaderBiddingProvider = HeaderBiddingProvider()
     
@@ -21,28 +27,30 @@ final class HeaderBiddingProvider {
     }
     
     func getConfigEntities(completion: @escaping ([BDMAdNetworkConfiguration]) -> Void) {
-        let entities: [BDMAdNetworkConfiguration] = self.json
-            .compactMap { $0.adConfig() }
+        let entities: [BDMAdNetworkConfiguration] = json.compactMap { $0.adConfig() }
         completion(entities)
     }
-    
 }
 
 fileprivate extension Dictionary
 where Key == String, Value == Any {
     func adConfig() -> BDMAdNetworkConfiguration? {
         return BDMAdNetworkConfiguration.build { builder in
-            let _ = (self["network_class"] as? String)
+            // Append initialisation paramters
+            let _ = builder.appendInitializationParams(self)
+            // Append ad network class
+            let _ = (self[HeaderBiddingProvider.Keys.networkClass] as? String)
                 .flatMap { NSClassFromString($0) }
                 .flatMap { $0 as? BDMNetwork.Type }
                 .flatMap { builder.appendNetworkClass($0) }
-            let _ = (self["network"] as? String)
+            // Append ad networn name
+            let _ = (self[HeaderBiddingProvider.Keys.networkName] as? String)
                 .flatMap(builder.appendName)
-            let _ = builder.appendInitializationParams(self)
-            (self["ad_units"] as? [[String: Any]])?
-                .forEach { data in
-                    let _ = builder.appendAdUnit(BDMAdUnitFormatFromString(data["format"] as? String),
-                                                 data.filter { $0.key != "format" })
+            // Append ad units
+            let _ = (self[HeaderBiddingProvider.Keys.adUnits] as? [[String: Any]])?
+                .map { data in
+                    builder.appendAdUnit(BDMAdUnitFormatFromString(data[HeaderBiddingProvider.Keys.format] as? String),
+                                         data.filter { $0.key != HeaderBiddingProvider.Keys.format })
             }
         }
     }

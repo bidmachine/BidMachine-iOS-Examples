@@ -1,16 +1,102 @@
 PODS:
-  - BidMachine (1.1.1)
+  - AdColony (3.3.8.1)
+  - BidMachine (1.3.0):
+    - BidMachine/Core (= 1.3.0)
+  - BidMachine/AdColonyAdapter (1.3.0):
+    - AdColony (~> 3.3)
+    - BidMachine/Core
+  - BidMachine/Core (1.3.0):
+    - Protobuf (~> 3.9)
+    - StackIAB (~> 0.5.0)
+    - StackModules (~> 0.6.3)
+  - BidMachine/FacebookAdapter (1.3.0):
+    - BidMachine/Core
+    - FBAudienceNetwork (~> 5.4)
+  - BidMachine/MyTargetAdapter (1.3.0):
+    - BidMachine/Core
+    - myTargetSDK (~> 5.3)
+  - BidMachine/TapjoyAdapter (1.3.0):
+    - BidMachine/Core
+    - TapjoySDK (~> 12.3)
+  - BidMachine/VungleAdapter (1.3.0):
+    - BidMachine/Core
+    - VungleSDK-iOS (~> 6.3)
+  - FBAudienceNetwork (5.4.0):
+    - FBSDKCoreKit/Basics
+  - FBSDKCoreKit/Basics (5.3.0)
+  - myTargetSDK (5.3.3)
+  - Protobuf (3.9.0)
+  - StackIAB (0.5.2):
+    - StackIAB/StackMRAIDKit (= 0.5.2)
+    - StackIAB/StackNASTKit (= 0.5.2)
+    - StackIAB/StackRichMedia (= 0.5.2)
+    - StackIAB/StackVASTAssets (= 0.5.2)
+    - StackIAB/StackVASTKit (= 0.5.2)
+    - StackIAB/StackVideoPlayer (= 0.5.2)
+    - StackIAB/StackXML (= 0.5.2)
+    - StackModules (~> 0.6.3)
+  - StackIAB/StackMRAIDKit (0.5.2):
+    - StackModules (~> 0.6.3)
+  - StackIAB/StackNASTKit (0.5.2):
+    - StackIAB/StackVASTKit
+    - StackModules (~> 0.6.3)
+  - StackIAB/StackRichMedia (0.5.2):
+    - StackIAB/StackVASTAssets
+    - StackIAB/StackVideoPlayer
+    - StackModules (~> 0.6.3)
+  - StackIAB/StackVASTAssets (0.5.2):
+    - StackIAB/StackXML
+    - StackModules (~> 0.6.3)
+  - StackIAB/StackVASTKit (0.5.2):
+    - StackIAB/StackMRAIDKit
+    - StackIAB/StackVASTAssets
+    - StackIAB/StackVideoPlayer
+    - StackModules (~> 0.6.3)
+  - StackIAB/StackVideoPlayer (0.5.2):
+    - StackModules (~> 0.6.3)
+  - StackIAB/StackXML (0.5.2):
+    - StackModules (~> 0.6.3)
+  - StackModules (0.6.6):
+    - StackModules/StackUIKit (= 0.6.6)
+  - StackModules/StackFoundation (0.6.6)
+  - StackModules/StackUIKit (0.6.6):
+    - StackModules/StackFoundation
+  - TapjoySDK (12.3.1)
+  - VungleSDK-iOS (6.3.2)
 
 DEPENDENCIES:
-  - BidMachine (= 1.1.1)
+  - BidMachine (= 1.3.0)
+  - BidMachine/AdColonyAdapter (= 1.3.0)
+  - BidMachine/FacebookAdapter (= 1.3.0)
+  - BidMachine/MyTargetAdapter (= 1.3.0)
+  - BidMachine/TapjoyAdapter (= 1.3.0)
+  - BidMachine/VungleAdapter (= 1.3.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - AdColony
     - BidMachine
+    - FBAudienceNetwork
+    - FBSDKCoreKit
+    - myTargetSDK
+    - Protobuf
+    - StackIAB
+    - StackModules
+    - TapjoySDK
+    - VungleSDK-iOS
 
 SPEC CHECKSUMS:
-  BidMachine: d4742ae6c049edba0df0397c3f6d36a768c21819
+  AdColony: 21c9cdcc780854d406e213cb1e5ef9f2b165cca3
+  BidMachine: 2fd0872d653d906b7fe733c557bc64a392a6c104
+  FBAudienceNetwork: c1514860ed6d9ba9f97350f3fbb3ac49556f5e43
+  FBSDKCoreKit: 39748deefe37a005f983722e433be2ddcdd83ae7
+  myTargetSDK: e63e4e5be9e8dd714339df9ade73059bf3a3d385
+  Protobuf: 1097ca58584c8d9be81bfbf2c5ff5975648dd87a
+  StackIAB: 628be1e047791019b486f005b6cc482eb17a8e5d
+  StackModules: f71104593d2c0bcd2d7beaf8114db927f5f6d8c6
+  TapjoySDK: 753e103874719a63dd37c479bd8046db3c274cd6
+  VungleSDK-iOS: 69a7f407b60281d2954ffc5eeeac349fbfed51d6
 
-PODFILE CHECKSUM: c6227c4a417b0f1ab504ff83a0ea163a72ac3c7e
+PODFILE CHECKSUM: cac96ce7023ef6c699281d7d3820318d379dcf91
 
 COCOAPODS: 1.6.1

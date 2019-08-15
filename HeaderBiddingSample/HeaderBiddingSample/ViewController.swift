@@ -9,11 +9,9 @@
 import UIKit
 import BidMachine
 
+
 final class ViewController: UIViewController {
-    
-    
-    //MARK: - Outlets -
-    
+    //MARK: - Outlets -    
     @IBOutlet weak var showBannerButton: UIButton!
     @IBOutlet weak var removeBannerButton: UIButton!
     @IBOutlet weak var showInterstitialButton: UIButton!
@@ -47,20 +45,7 @@ final class ViewController: UIViewController {
     }()
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-        var configEntities: [BDMAdNetworkConfiguration] = []
-        HeaderBiddingProvider.shared.getConfigEntities { entities in
-            entities.forEach { configEntity in
-                configEntities.append(configEntity)
-            }
-        }
-        let configuration: BDMSdkConfiguration = BDMSdkConfiguration()
-        configuration.networkConfigurations = configEntities
-        BDMSdk.shared().enableLogging = true
-        BDMSdk.shared().startSession(withSellerID: "5", configuration: configuration) {
-            print("BidMachine SDK was successfully initialized!")
-        }
-        
+        super.viewDidLoad()        
         bannerView.delegate = self
         bannerView.rootViewController = self
         showBannerButton.isEnabled = false
@@ -74,10 +59,9 @@ final class ViewController: UIViewController {
     }
 }
 
-// MARK: - Banner -
 
+// MARK: - Banner -
 extension ViewController {
-    
     @IBAction func loadBanner(_ sender: UIButton) {
         bannerRequest.adSize = .size320x50
         bannerView.populate(with: bannerRequest)
@@ -94,7 +78,6 @@ extension ViewController {
         removeBannerButton.isEnabled = false
     }
     
-    
     private func configureBannerView() {
         let bannerViewWidthConstraint = bannerView.widthAnchor.constraint(equalToConstant: CGSizeFromBDMSize(bannerRequest.adSize).width)
         let bannerViewHeightConstraint = bannerView.heightAnchor.constraint(equalToConstant: CGSizeFromBDMSize(bannerRequest.adSize).height)
@@ -105,8 +88,8 @@ extension ViewController {
                                      bannerViewVerticalCenter,
                                      bannerViewHorizontalCenter])
     }
-    
 }
+
 
 extension ViewController: BDMBannerDelegate {
     func bannerViewReady(toPresent bannerView: BDMBannerView) {
@@ -121,10 +104,9 @@ extension ViewController: BDMBannerDelegate {
     func bannerViewRecieveUserInteraction(_ bannerView: BDMBannerView) {}
 }
 
-// MARK: - Interstitial -
 
+// MARK: - Interstitial -
 extension ViewController {
-    
     @IBAction func loadAd(_ sender: UIButton) {
         interstitialRequest.type = selectInterstitialType()
         interstitial.populate(with: interstitialRequest)
@@ -143,8 +125,8 @@ extension ViewController {
         }
         return type
     }
-    
 }
+
 
 extension ViewController: BDMInterstitialDelegate {
     func interstitialReady(toPresent interstitial: BDMInterstitial) {
@@ -168,10 +150,9 @@ extension ViewController: BDMInterstitialDelegate {
     func interstitialRecieveUserInteraction(_ interstitial: BDMInterstitial) {}
 }
 
-// MARK: - Rewarded Video -
 
+// MARK: - Rewarded Video -
 extension ViewController {
-    
     @IBAction func loadRewardedVideo(_ sender: UIButton) {
         rewarded.populate(with: rewardedRequest)
     }
@@ -179,8 +160,8 @@ extension ViewController {
     @IBAction func presentRewardedVideo(_ sender: UIButton) {
         rewarded.present(fromRootViewController: self)
     }
-    
 }
+
 
 extension ViewController: BDMRewardedDelegate {
     func rewardedReady(toPresent rewarded: BDMRewarded) {

@@ -1,9 +1,8 @@
 platform :ios, '9.0'
 workspace 'BidMachine-iOS-Examples.xcworkspace'
-use_frameworks!
 
-source 'https://github.com/appodeal/CocoaPods.git'
-source 'https://github.com/CocoaPods/Specs.git'
+install! 'cocoapods', :deterministic_uuids => false
+use_frameworks!
 
 def bidmachine 
     pod "BidMachine", "1.3.0"
