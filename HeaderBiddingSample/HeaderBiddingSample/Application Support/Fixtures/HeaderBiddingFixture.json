@@ -1,0 +1,89 @@
+[
+        {
+            "ad_units": [
+                {
+                    "placement_id": "95298PL39048",
+                    "format": "interstitial_video"
+                }
+            ],
+            "app_id": "5a35a75845eaab51250070a5",
+            "network": "vungle",
+            "network_class": "BDMVungleAdNetwork"
+        },
+        {
+            "ad_units": [
+                {
+                    "slot_id": "576965",
+                    "format": "banner_320x50"
+                },
+                {
+                    "slot_id": "535981",
+                    "format": "interstitial_static"
+                },
+                {
+                    "slot_id": "68990",
+                    "format": "rewarded_video"
+                }
+            ],
+            "network": "my_target",
+            "network_class": "BDMMyTargetAdNetwork"
+        },
+        {
+            "ad_units": [
+                {
+                    "facebook_key": "358682981273012_489521918189117",
+                    "format": "rewarded_video"
+                },
+                {
+                    "facebook_key": "358682981273012_537286223412686",
+                    "format": "banner_320x50"
+                },
+                {
+                    "facebook_key": "358682981273012_465634583911184",
+                    "format": "interstitial_static"
+                }
+            ],
+            "app_id": "358682981273012",
+            "placement_ids": [
+                "358682981273012_489521918189117",
+                "358682981273012_537286223412686",
+                "358682981273012_465634583911184"
+            ],
+            "network": "facebook",
+            "network_class": "BDMFacebookAdNetwork"
+        },
+        {
+            "ad_units": [
+                {
+                    "placement_name": "video_without_cap",
+                    "format": "interstitial_video"
+                },
+                {
+                    "placement_name": "rewarded_video_without_cap_pb",
+                    "format": "rewarded_video"
+                }
+            ],
+            "sdk_key": "nAYSahqzQOSCrcwUQeO7JgEB8fnBHrQTJTOhHaUMsHf7q2G9YU-vOeszpSOL",
+            "network": "tapjoy",
+            "network_class": "BDMTapjoyAdNetwork"
+        },
+        {
+            "ad_units": [
+                {
+                    "format": "rewarded_video",
+                    "zone_id": "vzafa1dbf960a24d2296"
+                },
+                {
+                    "format": "interstitial_video",
+                    "zone_id": "vz2015303a6f994b2286"
+                }
+            ],
+            "app_id": "appe6b49dc935c2444583",
+            "zones": [
+                "vzafa1dbf960a24d2296",
+                "vz2015303a6f994b2286"
+            ],
+            "network": "adcolony",
+            "network_class": "BDMAdColonyAdNetwork"
+        }
+]
