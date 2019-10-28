@@ -1,20 +1,17 @@
 platform :ios, '9.0'
 workspace 'BidMachine-iOS-Examples.xcworkspace'
 
-install! 'cocoapods', :deterministic_uuids => false
+source 'https://github.com/CocoaPods/Specs.git'
+
+install! 'cocoapods', :deterministic_uuids => false, :warn_for_multiple_pod_sources => false
 use_frameworks!
 
 def bidmachine 
-    pod "BidMachine", "1.3.1"
+    pod "BidMachine", "1.3.3"
 end
 
 def header_bidding 
-    pod "BidMachine/FacebookAdapter"
-    pod "BidMachine/MyTargetAdapter"
-    pod "BidMachine/VungleAdapter"
-    pod "BidMachine/TapjoyAdapter"
-    pod "BidMachine/AdColonyAdapter"
-    pod "BidMachine/MintegralAdapter"
+    pod "BidMachine/Adapters"
 end
 
 target 'Banner' do 
