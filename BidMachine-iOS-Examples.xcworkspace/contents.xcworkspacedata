@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:NativeAd/NativeAd.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Banner/Banner.xcodeproj">
    </FileRef>
    <FileRef
