@@ -1,13 +1,14 @@
 platform :ios, '9.0'
 workspace 'BidMachine-iOS-Examples.xcworkspace'
 
+source 'https://github.com/appodeal/CocoaPods.git'
 source 'https://github.com/CocoaPods/Specs.git'
 
 install! 'cocoapods', :deterministic_uuids => false, :warn_for_multiple_pod_sources => false
 use_frameworks!
 
 def bidmachine 
-    pod "BidMachine", "1.3.3"
+    pod "BidMachine", "1.4.0"
 end
 
 def header_bidding 
@@ -26,6 +27,11 @@ end
 
 target 'Rewarded' do 
     project 'Rewarded/Rewarded.xcodeproj' 
+    bidmachine
+end
+
+target 'NativeAd' do 
+    project 'NativeAd/NativeAd.xcodeproj' 
     bidmachine
 end
 
