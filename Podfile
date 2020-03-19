@@ -8,7 +8,7 @@ install! 'cocoapods', :deterministic_uuids => false, :warn_for_multiple_pod_sour
 use_frameworks!
 
 def bidmachine 
-    pod "BidMachine", "1.4.0"
+    pod "BidMachine", "~> 1.4.0"
 end
 
 def header_bidding 
