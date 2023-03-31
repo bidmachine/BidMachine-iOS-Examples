@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:HeaderBiddingSample.xcodeproj">
+      location = "self:/Users/assassin/Desktop/BidMachine-iOS-Examples/MediaAd/MediaAd.xcodeproj">
    </FileRef>
 </Workspace>

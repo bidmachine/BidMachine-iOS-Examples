@@ -1,96 +1,58 @@
-//
-//  ViewController.swift
-//  Interstitial
-//
-//  Created by Yaroslav Skachkov on 1/8/19.
-//  Copyright © 2019 Appodeal. All rights reserved.
-//
-
 import UIKit
 import BidMachine
+import BidMachineApiCore
 
 class InterstitialVC: UIViewController {
 
-    @IBOutlet weak var presentButton: UIButton!
-    
     @IBOutlet weak var interstitialTypeSegmentedControl: UISegmentedControl!
     
-    private lazy var interstitial: BDMInterstitial = {
-        return BDMInterstitial()
-    }()
-    
-    private lazy var request: BDMInterstitialRequest = {
-        return BDMInterstitialRequest()
-    }()
+    private var interstitial: BidMachineInterstitial?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presentButton.isEnabled = false
-        interstitial.delegate = self
     }
 
-    @IBAction func loadNonVideoAd(_ sender: UIButton) {
-        request.type = selectInterstitialType()
-        request.perform(with: self)
+    @IBAction func loadInterstitial(_ sender: Any) {
+        let configuration = try? BidMachineSdk.shared.requestConfiguration(interstitialTypeSegmentedControl.format)
+        BidMachineSdk.shared.interstitial (configuration) { [weak self] ad, error in
+            guard let self = self, let ad = ad else {
+                return
+            }
+
+            self.interstitial = ad
+            ad.controller = self
+            ad.delegate = self
+            ad.loadAd()
+        }
     }
     
     @IBAction func presentInterstitial(_ sender: UIButton) {
-        interstitial.present(fromRootViewController: self)
-    }
-    
-    private func selectInterstitialType() -> BDMFullscreenAdType {
-        var type: BDMFullscreenAdType
-        switch interstitialTypeSegmentedControl.titleForSegment(at: interstitialTypeSegmentedControl.selectedSegmentIndex) {
-        case "Video" : type = .fullscreenAdTypeVideo
-        case "NonVideo" : type = .fullsreenAdTypeBanner
-        default : type = .fullscreenAdTypeAll
+        guard let interstitial = interstitial, interstitial.canShow else {
+            return
         }
-        return type
+        interstitial.presentAd()
     }
 }
 
-extension InterstitialVC: BDMRequestDelegate {
-    func request(_ request: BDMRequest, failedWithError error: Error) {
-        print("Auctuion failed")
+extension InterstitialVC: BidMachineAdDelegate {
+    
+    func didLoadAd(_ ad: BidMachine.BidMachineAdProtocol) {
+        
     }
     
-    func request(_ request: BDMRequest, completeWith info: BDMAuctionInfo) {
-        print("Auctuion complete")
-        interstitial.populate(with: request as! BDMInterstitialRequest)
-    }
-    
-    func requestDidExpire(_ request: BDMRequest) {
-        print("Auction expired")
+    func didFailLoadAd(_ ad: BidMachine.BidMachineAdProtocol, _ error: Error) {
+        
     }
 }
 
-extension InterstitialVC: BDMInterstitialDelegate {
-    func interstitialReady(toPresent interstitial: BDMInterstitial) {
-        print("Interstitial is ready to present ad")
-        presentButton.isEnabled = true
-    }
+fileprivate extension UISegmentedControl {
     
-    func interstitialWillPresent(_ interstitial: BDMInterstitial) {
-        print("Interstitial will present ad")
-    }
-    
-    func interstitialDidDismiss(_ interstitial: BDMInterstitial) {
-        print("Interstitial dismissed")
-        presentButton.isEnabled = false
-    }
-    
-    func interstitialRecieveUserInteraction(_ interstitial: BDMInterstitial) {
-        print("Interstitial received user interaction")
-    }
-    
-    func interstitial(_ interstitial: BDMInterstitial, failedWithError error: Error) {
-        print("Interstitial failed on loading with error: \(error)")
-        presentButton.isEnabled = false
-    }
-    
-    func interstitial(_ interstitial: BDMInterstitial, failedToPresentWithError error: Error) {
-        print("Interstitial failed to present ad with error: \(error)")
-        presentButton.isEnabled = false
+    var format: PlacementFormat {
+        switch self.selectedSegmentIndex {
+        case 0: return .interstitial
+        case 1: return .interstitialStatic
+        case 2: return .interstitialVideo
+        default: return .interstitial
+        }
     }
 }
-

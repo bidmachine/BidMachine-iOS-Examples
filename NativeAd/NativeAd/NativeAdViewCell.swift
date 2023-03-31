@@ -1,45 +1,26 @@
-//
-//  NativeAdViewCell.swift
-//  Sample
-//
-//  Created by Yaroslav Skachkov on 11/30/18.
-//  Copyright © 2018 Yaroslav Skachkov. All rights reserved.
-//
-
 import UIKit
 import BidMachine
 
-class NativeAdViewCell: UITableViewCell, BDMNativeAdRendering {
+class NativeAdViewCell: UITableViewCell, BidMachineNativeAdRendering {
+    
+    var titleLabel: UILabel? { titleLab }
+    
+    var callToActionLabel: UILabel? { callToActionLab }
+    
+    var descriptionLabel: UILabel? { descriptionLab }
+    
+    var iconView: UIImageView? { icon }
+    
+    var mediaContainerView: UIView? { mediaContainer }
+    
+    var adChoiceView: UIView? { callToActionLabel }
+    
     
     @IBOutlet weak var titleLab: UILabel!
     @IBOutlet weak var descriptionLab: UILabel!
     @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var mediaContainer: UIView!
     @IBOutlet weak var callToActionLab: UILabel!
-    
-    func titleLabel() -> UILabel {
-        return titleLab
-    }
-    
-    func descriptionLabel() -> UILabel {
-        return descriptionLab
-    }
-    
-    func iconView() -> UIImageView {
-        return icon
-    }
-    
-    func mediaContainerView() -> UIView {
-        return mediaContainer
-    }
-    
-    func callToActionLabel() -> UILabel {
-        return callToActionLab
-    }
-    
-    func containerView() -> UIView {
-        return self
-    }
 }
 
 

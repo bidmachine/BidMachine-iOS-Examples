@@ -1,97 +1,66 @@
-//
-//  ViewController.swift
-//  Banner
-//
-//  Created by Yaroslav Skachkov on 1/8/19.
-//  Copyright © 2019 Appodeal. All rights reserved.
-//
-
 import UIKit
 import BidMachine
+import BidMachineApiCore
 
 class BannerVC: UIViewController {
     
-    @IBOutlet weak var removeBannerButton: UIButton!
+    @IBOutlet weak var bannerSegmentSize: UISegmentedControl!
     
-    private lazy var bannerView: BDMBannerView = {
-        let bannerView = BDMBannerView()
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
-        return bannerView
-    }()
-    
-    private lazy var request: BDMBannerRequest = {
-        return BDMBannerRequest()
-    }()
+    private var bannerView: BidMachineBanner?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        removeBannerButton.isEnabled = false
-        bannerView.delegate = self
-        bannerView.rootViewController = self
     }
-
+    
     @IBAction func loadBanner(_ sender: UIButton) {
-        request.adSize = .size320x50
-        request.perform(with: self)
+        let configuration = try? BidMachineSdk.shared.requestConfiguration(bannerSegmentSize.format)
+        BidMachineSdk.shared.banner (configuration) { [weak self] ad, error in
+            guard let self = self, let ad = ad else {
+                return
+            }
+            self.bannerView?.removeFromSuperview()
+            self.bannerView = ad
+            ad.controller = self
+            ad.delegate = self
+            ad.loadAd()
+        }
     }
     
     @IBAction func removeBanner(_ sender: UIButton) {
-        bannerView.removeFromSuperview()
-        removeBannerButton.isEnabled = false
-    }
-    
-    private func configureBannerView() {
-        let bannerViewWidthConstraint = bannerView.widthAnchor.constraint(equalToConstant: CGSizeFromBDMSize(request.adSize).width)
-        let bannerViewHeightConstraint = bannerView.heightAnchor.constraint(equalToConstant: CGSizeFromBDMSize(request.adSize).height)
-        let bannerViewHorizontalCenter = bannerView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
-        let bannerViewVerticalCenter = bannerView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -120)
-        NSLayoutConstraint.activate([bannerViewWidthConstraint,
-                                     bannerViewHeightConstraint,
-                                     bannerViewVerticalCenter,
-                                     bannerViewHorizontalCenter])
+        bannerView?.removeFromSuperview()
     }
 }
 
-extension BannerVC: BDMRequestDelegate {
-    func request(_ request: BDMRequest, failedWithError error: Error) {
-        print("Auctuion failed");
+extension BannerVC: BidMachineAdDelegate {
+    
+    func didLoadAd(_ ad: BidMachine.BidMachineAdProtocol) {
+        guard let ad = ad as? BidMachineBanner else {
+            return
+        }
+        ad.place(on: self.view, ad.requestInfo.placement.placement.size)
     }
     
-    func request(_ request: BDMRequest, completeWith info: BDMAuctionInfo) {
-        bannerView.populate(with: request as! BDMBannerRequest)
-        print("Auction complete")
-    }
-    
-    func requestDidExpire(_ request: BDMRequest) {
-        print("Auction expired")
+    func didFailLoadAd(_ ad: BidMachine.BidMachineAdProtocol, _ error: Error) {
+        
     }
 }
 
-extension BannerVC: BDMBannerDelegate {
-    func bannerViewReady(toPresent bannerView: BDMBannerView) {
-        print("Banner view is ready to present ad")
-        removeBannerButton.isEnabled = true
-        self.view.addSubview(self.bannerView)
-        configureBannerView()
-    }
+fileprivate extension UISegmentedControl {
     
-    func bannerViewRecieveUserInteraction(_ bannerView: BDMBannerView) {
-        print("Banner view received user interaction")
+    var format: PlacementFormat {
+        return self.selectedSegmentIndex == 0 ? .banner : .banner300x250
     }
+}
 
-    func bannerView(_ bannerView: BDMBannerView, failedWithError error: Error) {
-        print("Banner view failed on loading with error: \(error)")
-    }
+fileprivate extension UIView {
     
-    func bannerViewWillLeaveApplication(_ bannerView: BDMBannerView) {
-        print("Banner view will leave application")
-    }
-    
-    func bannerViewWillPresentScreen(_ bannerView: BDMBannerView) {
-        print("Banner view will present modal screen")
-    }
-    
-    func bannerViewDidDismissScreen(_ bannerView: BDMBannerView) {
-        print("Banner view did dismiss modal screen")
+    func place(on view: UIView, _ size: CGSize) {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(self)
+        NSLayoutConstraint.activate([self.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                                     self.widthAnchor.constraint(equalToConstant: size.width),
+                                     self.heightAnchor.constraint(equalToConstant: size.height),
+                                     self.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50)])
+        
     }
 }

@@ -1,13 +1,17 @@
-//
-//  TableViewController.swift
-//  NativeAd
-//
-//  Created by Ilia Lozhkin on 11/26/19.
-//  Copyright © 2019 Appodeal. All rights reserved.
-//
-
 import UIKit
 import BidMachine
+
+class RefreshControll: UIRefreshControl {
+    
+    override init() {
+        super.init()
+        self.attributedTitle = NSAttributedString(string: "Load ad")
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
 
 class TableViewController: UITableViewController {
     
@@ -21,8 +25,10 @@ class TableViewController: UITableViewController {
         static let contentTitle = "Lorem ipsum"
         static let contentDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     }
-    private let native = BDMNativeAd()
+    
     private var cellsCount = 0
+    
+    private var nativeAd: BidMachineNative?
     
     private var fakeEntityArray: [TableViewContentEntity] = [
         TableViewContentEntity(image: UIImage(named: "ManPic")!, title: Constants.contentTitle, description: Constants.contentDescription),
@@ -34,10 +40,8 @@ class TableViewController: UITableViewController {
         super.viewDidLoad()
         self.tableView.register(ContentTableViewCell.nib, forCellReuseIdentifier: ContentTableViewCell.reuseIdentifier)
         self.tableView.register(NativeAdViewCell.nib, forCellReuseIdentifier: NativeAdViewCell.reuseIdentifier)
-        native.delegate = self
-        native.producerDelegate = self
-        
-        native.make(BDMNativeAdRequest())
+        self.tableView.refreshControl = RefreshControll()
+        self.tableView.refreshControl?.addTarget(self, action: #selector(updataData(_:)), for: .valueChanged)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -48,12 +52,8 @@ class TableViewController: UITableViewController {
         
         if indexPath.row.quotientAndRemainder(dividingBy: 20).remainder == 0 {
             let nativeAdViewCell = tableView.dequeueReusableCell(withIdentifier: NativeAdViewCell.reuseIdentifier, for: indexPath) as! NativeAdViewCell
-            native.unregisterViews()
-            native.present(on: nativeAdViewCell,
-                           clickableViews: [],
-                           adRendering: nativeAdViewCell,
-                           controller: self,
-                           error: nil)
+            nativeAd?.unregisterView()
+            try? nativeAd?.presentAd(nativeAdViewCell, nativeAdViewCell)
             return nativeAdViewCell
         }
         
@@ -76,26 +76,38 @@ class TableViewController: UITableViewController {
     }
 }
 
-extension TableViewController: BDMNativeAdDelegate {
-    func nativeAd(_ nativeAd: BDMNativeAd, readyToPresentAd auctionInfo: BDMAuctionInfo) {
+extension TableViewController: BidMachineAdDelegate {
+    
+    func didLoadAd(_ ad: BidMachine.BidMachineAdProtocol) {
+        self.tableView.refreshControl?.endRefreshing()
         cellsCount = 100
         tableView.reloadData()
-        print("Native ad did load")
-    }
-
-    func nativeAd(_ nativeAd: BDMNativeAd, failedWithError error: Error) {
-        print("Native ad failed")
-    }
-}
-
-extension TableViewController: BDMAdEventProducerDelegate {
-
-    func didProduceImpression(_ producer: BDMAdEventProducer) {
-        print("Native ad received impression")
     }
     
-    func didProduceUserAction(_ producer: BDMAdEventProducer) {
-        print("Native ad received user interaction")
+    func didFailLoadAd(_ ad: BidMachine.BidMachineAdProtocol, _ error: Error) {
+        self.tableView.refreshControl?.endRefreshing()
+        guard cellsCount != 0 else {
+            return
+        }
+        cellsCount = 0
+        tableView.reloadData()
     }
 }
 
+extension TableViewController {
+    
+    @objc private func updataData(_ sender: Any) {
+        BidMachineSdk.shared.native { [weak self] ad, error in
+            guard let self = self, let ad = ad else {
+                self?.refreshControl?.endRefreshing()
+                return
+            }
+            self.nativeAd = ad
+            ad.controller = self
+            ad.delegate = self
+            ad.loadAd()
+        }
+    }
+    
+}
+ 

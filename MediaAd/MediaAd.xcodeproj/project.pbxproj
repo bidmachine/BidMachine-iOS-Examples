@@ -7,25 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23366BBFE435450D23BDAFA7 /* Pods_MediaAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CDC88B9D9A2D745D5F3EF86 /* Pods_MediaAd.framework */; };
 		D9599DDA21E49E2800CC25E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9599DD921E49E2800CC25E1 /* AppDelegate.swift */; };
-		D9599DDC21E49E2800CC25E1 /* BannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9599DDB21E49E2800CC25E1 /* BannerVC.swift */; };
+		D9599DDC21E49E2800CC25E1 /* MediaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9599DDB21E49E2800CC25E1 /* MediaVC.swift */; };
 		D9599DDF21E49E2800CC25E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9599DDD21E49E2800CC25E1 /* Main.storyboard */; };
 		D9599DE121E49E2800CC25E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9599DE021E49E2800CC25E1 /* Assets.xcassets */; };
 		D9599DE421E49E2800CC25E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9599DE221E49E2800CC25E1 /* LaunchScreen.storyboard */; };
-		F95D1679C317907F6FBCCC48 /* Pods_Banner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24EE995E958617B748C08396 /* Pods_Banner.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		24EE995E958617B748C08396 /* Pods_Banner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Banner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3BF755F9D93124C33AFDA984 /* Pods-Banner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Banner.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Banner/Pods-Banner.release.xcconfig"; sourceTree = "<group>"; };
-		9996D6EFD28DB330E3DA719A /* Pods-Banner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Banner.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Banner/Pods-Banner.debug.xcconfig"; sourceTree = "<group>"; };
-		D9599DD621E49E2800CC25E1 /* Banner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Banner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		46F53B15839DA6EAF706D44C /* Pods-MediaAd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaAd.release.xcconfig"; path = "Target Support Files/Pods-MediaAd/Pods-MediaAd.release.xcconfig"; sourceTree = "<group>"; };
+		7CDC88B9D9A2D745D5F3EF86 /* Pods_MediaAd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediaAd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9599DD621E49E2800CC25E1 /* MediaAd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaAd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9599DD921E49E2800CC25E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D9599DDB21E49E2800CC25E1 /* BannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerVC.swift; sourceTree = "<group>"; };
+		D9599DDB21E49E2800CC25E1 /* MediaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaVC.swift; sourceTree = "<group>"; };
 		D9599DDE21E49E2800CC25E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D9599DE021E49E2800CC25E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9599DE321E49E2800CC25E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9599DE521E49E2800CC25E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDD3E04D71CB2A2C90F25679 /* Pods-MediaAd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaAd.debug.xcconfig"; path = "Target Support Files/Pods-MediaAd/Pods-MediaAd.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,81 +33,82 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F95D1679C317907F6FBCCC48 /* Pods_Banner.framework in Frameworks */,
+				23366BBFE435450D23BDAFA7 /* Pods_MediaAd.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1F13CC7E9F36559EFD07409C /* Pods */ = {
+		2D1D70B8CF4A8C2656F92E66 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9996D6EFD28DB330E3DA719A /* Pods-Banner.debug.xcconfig */,
-				3BF755F9D93124C33AFDA984 /* Pods-Banner.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		835F691C700E8C3B3A2C7EAF /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				24EE995E958617B748C08396 /* Pods_Banner.framework */,
+				7CDC88B9D9A2D745D5F3EF86 /* Pods_MediaAd.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A0FB633DDC129E9C2FE0F26C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EDD3E04D71CB2A2C90F25679 /* Pods-MediaAd.debug.xcconfig */,
+				46F53B15839DA6EAF706D44C /* Pods-MediaAd.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
 			sourceTree = "<group>";
 		};
 		D9599DCD21E49E2800CC25E1 = {
 			isa = PBXGroup;
 			children = (
-				D9599DD821E49E2800CC25E1 /* Banner */,
+				D9599DD821E49E2800CC25E1 /* MediaAd */,
 				D9599DD721E49E2800CC25E1 /* Products */,
-				1F13CC7E9F36559EFD07409C /* Pods */,
-				835F691C700E8C3B3A2C7EAF /* Frameworks */,
+				A0FB633DDC129E9C2FE0F26C /* Pods */,
+				2D1D70B8CF4A8C2656F92E66 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		D9599DD721E49E2800CC25E1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D9599DD621E49E2800CC25E1 /* Banner.app */,
+				D9599DD621E49E2800CC25E1 /* MediaAd.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D9599DD821E49E2800CC25E1 /* Banner */ = {
+		D9599DD821E49E2800CC25E1 /* MediaAd */ = {
 			isa = PBXGroup;
 			children = (
 				D9599DD921E49E2800CC25E1 /* AppDelegate.swift */,
-				D9599DDB21E49E2800CC25E1 /* BannerVC.swift */,
+				D9599DDB21E49E2800CC25E1 /* MediaVC.swift */,
 				D9599DDD21E49E2800CC25E1 /* Main.storyboard */,
 				D9599DE021E49E2800CC25E1 /* Assets.xcassets */,
 				D9599DE221E49E2800CC25E1 /* LaunchScreen.storyboard */,
 				D9599DE521E49E2800CC25E1 /* Info.plist */,
 			);
-			path = Banner;
+			path = MediaAd;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D9599DD521E49E2800CC25E1 /* Banner */ = {
+		D9599DD521E49E2800CC25E1 /* MediaAd */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D9599DE821E49E2800CC25E1 /* Build configuration list for PBXNativeTarget "Banner" */;
+			buildConfigurationList = D9599DE821E49E2800CC25E1 /* Build configuration list for PBXNativeTarget "MediaAd" */;
 			buildPhases = (
-				5C7CAD7F8340F4F34193F844 /* [CP] Check Pods Manifest.lock */,
+				FAB181BB9B00F3A8B87A5BBA /* [CP] Check Pods Manifest.lock */,
 				D9599DD221E49E2800CC25E1 /* Sources */,
 				D9599DD321E49E2800CC25E1 /* Frameworks */,
 				D9599DD421E49E2800CC25E1 /* Resources */,
-				A611830A48ABFFA67CBFA5E9 /* [CP] Embed Pods Frameworks */,
+				747DDB0193FD478093844F5B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Banner;
+			name = MediaAd;
 			productName = Banner;
-			productReference = D9599DD621E49E2800CC25E1 /* Banner.app */;
+			productReference = D9599DD621E49E2800CC25E1 /* MediaAd.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -126,7 +127,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D9599DD121E49E2800CC25E1 /* Build configuration list for PBXProject "Banner" */;
+			buildConfigurationList = D9599DD121E49E2800CC25E1 /* Build configuration list for PBXProject "MediaAd" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -139,7 +140,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D9599DD521E49E2800CC25E1 /* Banner */,
+				D9599DD521E49E2800CC25E1 /* MediaAd */,
 			);
 		};
 /* End PBXProject section */
@@ -158,7 +159,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5C7CAD7F8340F4F34193F844 /* [CP] Check Pods Manifest.lock */ = {
+		747DDB0193FD478093844F5B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MediaAd/Pods-MediaAd-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MediaAd/Pods-MediaAd-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MediaAd/Pods-MediaAd-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FAB181BB9B00F3A8B87A5BBA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -173,28 +191,11 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Banner-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-MediaAd-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A611830A48ABFFA67CBFA5E9 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Banner/Pods-Banner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Banner/Pods-Banner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Banner/Pods-Banner-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -204,7 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9599DDC21E49E2800CC25E1 /* BannerVC.swift in Sources */,
+				D9599DDC21E49E2800CC25E1 /* MediaVC.swift in Sources */,
 				D9599DDA21E49E2800CC25E1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,17 +350,17 @@
 		};
 		D9599DE921E49E2800CC25E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9996D6EFD28DB330E3DA719A /* Pods-Banner.debug.xcconfig */;
+			baseConfigurationReference = EDD3E04D71CB2A2C90F25679 /* Pods-MediaAd.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WG4VFF78ZM;
-				INFOPLIST_FILE = Banner/Info.plist;
+				INFOPLIST_FILE = MediaAd/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.appodeal.Banner;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appodeal.Media;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -371,17 +372,17 @@
 		};
 		D9599DEA21E49E2800CC25E1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3BF755F9D93124C33AFDA984 /* Pods-Banner.release.xcconfig */;
+			baseConfigurationReference = 46F53B15839DA6EAF706D44C /* Pods-MediaAd.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WG4VFF78ZM;
-				INFOPLIST_FILE = Banner/Info.plist;
+				INFOPLIST_FILE = MediaAd/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.appodeal.Banner;
+				PRODUCT_BUNDLE_IDENTIFIER = com.appodeal.Media;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -394,7 +395,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D9599DD121E49E2800CC25E1 /* Build configuration list for PBXProject "Banner" */ = {
+		D9599DD121E49E2800CC25E1 /* Build configuration list for PBXProject "MediaAd" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D9599DE621E49E2800CC25E1 /* Debug */,
@@ -403,7 +404,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D9599DE821E49E2800CC25E1 /* Build configuration list for PBXNativeTarget "Banner" */ = {
+		D9599DE821E49E2800CC25E1 /* Build configuration list for PBXNativeTarget "MediaAd" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D9599DE921E49E2800CC25E1 /* Debug */,

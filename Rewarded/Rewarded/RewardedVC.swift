@@ -1,86 +1,59 @@
-//
-//  ViewController.swift
-//  Rewarded
-//
-//  Created by Yaroslav Skachkov on 1/8/19.
-//  Copyright © 2019 Appodeal. All rights reserved.
-//
-
 import UIKit
 import BidMachine
+import BidMachineApiCore
 
 class RewardedVC: UIViewController {
-    private lazy var rewarded: BDMRewarded = {
-        return BDMRewarded()
-    }()
+
+    @IBOutlet weak var rewardedTypeSegmentedControl: UISegmentedControl!
     
-    private lazy var request: BDMRewardedRequest = {
-        return BDMRewardedRequest()
-    }()
-    
-    @IBOutlet weak var presentButton: UIButton!
+    private var rewarded: BidMachineRewarded?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presentButton.isEnabled = false
-        rewarded.delegate = self
-    }
-
-    @IBAction func loadRewardedVideo(_ sender: UIButton) {
-        request.perform(with: self)
     }
     
-    @IBAction func presentRewardedVideo(_ sender: UIButton) {
-        rewarded.present(fromRootViewController: self)
+    @IBAction func loadRewarded(_ sender: Any) {
+        let configuration = try? BidMachineSdk.shared.requestConfiguration(rewardedTypeSegmentedControl.format)
+        BidMachineSdk.shared.rewarded (configuration) { [weak self] ad, error in
+            guard let self = self, let ad = ad else {
+                return
+            }
+
+            self.rewarded = ad
+            ad.controller = self
+            ad.delegate = self
+            ad.loadAd()
+        }
+    }
+    
+    @IBAction func presentRewarded(_ sender: Any) {
+        guard let rewarded = rewarded, rewarded.canShow else {
+            return
+        }
+        rewarded.presentAd()
     }
 }
 
-extension RewardedVC: BDMRequestDelegate {
-    func request(_ request: BDMRequest, failedWithError error: Error) {
-        print("Auctuion failed")
+extension RewardedVC: BidMachineAdDelegate {
+    
+    func didLoadAd(_ ad: BidMachine.BidMachineAdProtocol) {
+        
     }
     
-    func request(_ request: BDMRequest, completeWith info: BDMAuctionInfo) {
-        print("Auctuion failed")
-        rewarded.populate(with: request as! BDMRewardedRequest)
-    }
-    
-    func requestDidExpire(_ request: BDMRequest) {
-        print("Auction expired")
+    func didFailLoadAd(_ ad: BidMachine.BidMachineAdProtocol, _ error: Error) {
+        
     }
 }
 
-extension RewardedVC: BDMRewardedDelegate {
-    func rewardedReady(toPresent rewarded: BDMRewarded) {
-        print("Rewarded is ready to present ad")
-        presentButton.isEnabled = true
-    }
-
-    func rewarded(_ rewarded: BDMRewarded, failedWithError error: Error) {
-        print("Rewarded failed on loading with error: \(error)")
-        presentButton.isEnabled = false
-    }
+fileprivate extension UISegmentedControl {
     
-    func rewarded(_ rewarded: BDMRewarded, failedToPresentWithError error: Error) {
-        print("Rewarded failed to present with error with error: \(error)")
-        presentButton.isEnabled = false
-    }
-    
-    func rewardedWillPresent(_ rewarded: BDMRewarded) {
-        print("Rewarded will present ad")
-    }
-    
-    func rewardedDidDismiss(_ rewarded: BDMRewarded) {
-        print("Rewarded dismissed")
-        presentButton.isEnabled = false
-    }
-    
-    func rewardedRecieveUserInteraction(_ rewarded: BDMRewarded) {
-        print("Rewarded received user interaction")
-    }
-    
-    func rewardedFinishRewardAction(_ rewarded: BDMRewarded) {
-        print("Rewarded video has finished")
+    var format: PlacementFormat {
+        switch self.selectedSegmentIndex {
+        case 0: return .rewarded
+        case 1: return .rewardedStatic
+        case 2: return .rewardedVideo
+        default: return .rewarded
+        }
     }
 }
 
