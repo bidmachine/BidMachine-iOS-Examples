@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65802CED2AAFB94900152FFF /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65802CEC2AAFB94900152FFF /* TableViewController.m */; };
+		65A8E2E12AAF83500079D069 /* ContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65A8E2DF2AAF83500079D069 /* ContentTableViewCell.xib */; };
+		65A8E2E22AAF83500079D069 /* NativeAdViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65A8E2E02AAF83500079D069 /* NativeAdViewCell.xib */; };
+		65A8E2E52AAF83910079D069 /* BDMNativeAdViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A8E2E42AAF83910079D069 /* BDMNativeAdViewCell.m */; };
+		65A8E2E82AAF870B0079D069 /* BDMContentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A8E2E72AAF870B0079D069 /* BDMContentTableViewCell.m */; };
 		65BFD5612AAF64D0001BCB7B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BFD5602AAF64D0001BCB7B /* AppDelegate.m */; };
-		65BFD5672AAF64D0001BCB7B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BFD5662AAF64D0001BCB7B /* ViewController.m */; };
 		65BFD56A2AAF64D0001BCB7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65BFD5682AAF64D0001BCB7B /* Main.storyboard */; };
 		65BFD56C2AAF64D1001BCB7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65BFD56B2AAF64D1001BCB7B /* Assets.xcassets */; };
 		65BFD56F2AAF64D1001BCB7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65BFD56D2AAF64D1001BCB7B /* LaunchScreen.storyboard */; };
@@ -18,12 +22,18 @@
 
 /* Begin PBXFileReference section */
 		05AA0F6C326D773471C1C74A /* Pods-NativeAd.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NativeAd.release.xcconfig"; path = "Target Support Files/Pods-NativeAd/Pods-NativeAd.release.xcconfig"; sourceTree = "<group>"; };
+		65802CEB2AAFB94900152FFF /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		65802CEC2AAFB94900152FFF /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		6599AA592464D2A33CF187D3 /* Pods_NativeAd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NativeAd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		65A8E2DF2AAF83500079D069 /* ContentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContentTableViewCell.xib; sourceTree = "<group>"; };
+		65A8E2E02AAF83500079D069 /* NativeAdViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NativeAdViewCell.xib; sourceTree = "<group>"; };
+		65A8E2E32AAF83910079D069 /* BDMNativeAdViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDMNativeAdViewCell.h; sourceTree = "<group>"; };
+		65A8E2E42AAF83910079D069 /* BDMNativeAdViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDMNativeAdViewCell.m; sourceTree = "<group>"; };
+		65A8E2E62AAF870B0079D069 /* BDMContentTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDMContentTableViewCell.h; sourceTree = "<group>"; };
+		65A8E2E72AAF870B0079D069 /* BDMContentTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDMContentTableViewCell.m; sourceTree = "<group>"; };
 		65BFD55C2AAF64CF001BCB7B /* NativeAd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NativeAd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65BFD55F2AAF64D0001BCB7B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		65BFD5602AAF64D0001BCB7B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		65BFD5652AAF64D0001BCB7B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		65BFD5662AAF64D0001BCB7B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		65BFD5692AAF64D0001BCB7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		65BFD56B2AAF64D1001BCB7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65BFD56E2AAF64D1001BCB7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -75,8 +85,14 @@
 			children = (
 				65BFD55F2AAF64D0001BCB7B /* AppDelegate.h */,
 				65BFD5602AAF64D0001BCB7B /* AppDelegate.m */,
-				65BFD5652AAF64D0001BCB7B /* ViewController.h */,
-				65BFD5662AAF64D0001BCB7B /* ViewController.m */,
+				65802CEB2AAFB94900152FFF /* TableViewController.h */,
+				65802CEC2AAFB94900152FFF /* TableViewController.m */,
+				65A8E2E32AAF83910079D069 /* BDMNativeAdViewCell.h */,
+				65A8E2E42AAF83910079D069 /* BDMNativeAdViewCell.m */,
+				65A8E2E62AAF870B0079D069 /* BDMContentTableViewCell.h */,
+				65A8E2E72AAF870B0079D069 /* BDMContentTableViewCell.m */,
+				65A8E2DF2AAF83500079D069 /* ContentTableViewCell.xib */,
+				65A8E2E02AAF83500079D069 /* NativeAdViewCell.xib */,
 				65BFD5682AAF64D0001BCB7B /* Main.storyboard */,
 				65BFD56B2AAF64D1001BCB7B /* Assets.xcassets */,
 				65BFD56D2AAF64D1001BCB7B /* LaunchScreen.storyboard */,
@@ -157,7 +173,9 @@
 			files = (
 				65BFD56F2AAF64D1001BCB7B /* LaunchScreen.storyboard in Resources */,
 				65BFD56C2AAF64D1001BCB7B /* Assets.xcassets in Resources */,
+				65A8E2E22AAF83500079D069 /* NativeAdViewCell.xib in Resources */,
 				65BFD56A2AAF64D0001BCB7B /* Main.storyboard in Resources */,
+				65A8E2E12AAF83500079D069 /* ContentTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,9 +228,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65BFD5672AAF64D0001BCB7B /* ViewController.m in Sources */,
+				65A8E2E52AAF83910079D069 /* BDMNativeAdViewCell.m in Sources */,
+				65802CED2AAFB94900152FFF /* TableViewController.m in Sources */,
 				65BFD5612AAF64D0001BCB7B /* AppDelegate.m in Sources */,
 				65BFD5722AAF64D1001BCB7B /* main.m in Sources */,
+				65A8E2E82AAF870B0079D069 /* BDMContentTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,7 +13,7 @@ class NativeAdViewCell: UITableViewCell, BidMachineNativeAdRendering {
     
     var mediaContainerView: UIView? { mediaContainer }
     
-    var adChoiceView: UIView? { callToActionLabel }
+    var adChoiceView: UIView? { nil }
     
     
     @IBOutlet weak var titleLab: UILabel!
