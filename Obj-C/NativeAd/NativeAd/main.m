@@ -1,10 +1,3 @@
-//
-//  main.m
-//  Banner
-//
-//  Created by Ilia Lozhkin on 11.09.2023.
-//
-
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 
