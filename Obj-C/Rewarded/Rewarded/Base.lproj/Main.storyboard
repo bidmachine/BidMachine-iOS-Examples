@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Spa-6U-CES">
+                                <rect key="frame" x="0.0" y="318.5" width="187.5" height="30"/>
+                                <state key="normal" title="Load rewarded"/>
+                                <connections>
+                                    <action selector="loadRewarded:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GxV-y9-xCa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GpP-pq-nPu">
+                                <rect key="frame" x="187.5" y="318.5" width="187.5" height="30"/>
+                                <state key="normal" title="Present rewarded"/>
+                                <connections>
+                                    <action selector="presentRewarded:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VhM-nk-vo5"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="58Z-B8-PDg">
+                                <rect key="frame" x="85" y="20" width="205" height="32"/>
+                                <segments>
+                                    <segment title="Mixed"/>
+                                    <segment title="Static"/>
+                                    <segment title="Video"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="58Z-B8-PDg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Bu-uE-tp5"/>
+                            <constraint firstItem="58Z-B8-PDg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="BdT-nX-iNl"/>
+                            <constraint firstItem="Spa-6U-CES" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Lvf-Eu-vNw"/>
+                            <constraint firstItem="GpP-pq-nPu" firstAttribute="leading" secondItem="Spa-6U-CES" secondAttribute="trailing" id="Tp4-Cf-LSV"/>
+                            <constraint firstItem="Spa-6U-CES" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TqN-eS-ztT"/>
+                            <constraint firstItem="GpP-pq-nPu" firstAttribute="width" secondItem="Spa-6U-CES" secondAttribute="width" id="Vu6-5S-qL6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GpP-pq-nPu" secondAttribute="trailing" id="azr-Jh-q9c"/>
+                            <constraint firstItem="58Z-B8-PDg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="85" id="vIp-Ae-jlX"/>
+                            <constraint firstItem="GpP-pq-nPu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ztb-pA-S4W"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="rewardedTypeSegmentedControl" destination="58Z-B8-PDg" id="BKh-dY-PIS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="-0.44977511244377816"/>
+        </scene>
+    </scenes>
+</document>
