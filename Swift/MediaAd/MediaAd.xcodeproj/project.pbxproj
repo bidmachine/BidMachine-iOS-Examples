@@ -101,6 +101,7 @@
 				D9599DD321E49E2800CC25E1 /* Frameworks */,
 				D9599DD421E49E2800CC25E1 /* Resources */,
 				747DDB0193FD478093844F5B /* [CP] Embed Pods Frameworks */,
+				D1C869F7CFEC2B294DCED793 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -174,6 +175,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MediaAd/Pods-MediaAd-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1C869F7CFEC2B294DCED793 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MediaAd/Pods-MediaAd-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MediaAd/Pods-MediaAd-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MediaAd/Pods-MediaAd-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FAB181BB9B00F3A8B87A5BBA /* [CP] Check Pods Manifest.lock */ = {

@@ -108,6 +108,7 @@
 				65BFD5592AAF64CF001BCB7B /* Frameworks */,
 				65BFD55A2AAF64CF001BCB7B /* Resources */,
 				C6A722D7EC7AB1AB55FF28BC /* [CP] Embed Pods Frameworks */,
+				3AD4A13675379411347338E1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,6 +165,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3AD4A13675379411347338E1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Interstitial/Pods-Interstitial-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Interstitial/Pods-Interstitial-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Interstitial/Pods-Interstitial-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C6A722D7EC7AB1AB55FF28BC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

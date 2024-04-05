@@ -100,6 +100,7 @@
 				D9599E2D21E49ECF00CC25E1 /* Frameworks */,
 				D9599E2E21E49ECF00CC25E1 /* Resources */,
 				2CDE72912297EAA30ECE72F3 /* [CP] Embed Pods Frameworks */,
+				FE1C8285D7357F4545B8C51B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -195,6 +196,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rewarded/Pods-Rewarded-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE1C8285D7357F4545B8C51B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rewarded/Pods-Rewarded-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Rewarded/Pods-Rewarded-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Rewarded/Pods-Rewarded-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
