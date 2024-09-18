@@ -1,6 +1,5 @@
 import UIKit
 import BidMachine
-import BidMachineApiCore
 
 class RewardedVC: UIViewController {
 
