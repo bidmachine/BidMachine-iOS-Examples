@@ -31,11 +31,6 @@ target 'NativeAd' do
     bidmachine
 end
 
-target 'MediaAd' do 
-    project 'MediaAd/MediaAd.xcodeproj' 
-    bidmachine
-end
-
 # Post install configuration
 post_install do |installer|
   project = installer.pods_project
