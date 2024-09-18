@@ -3,7 +3,6 @@
 #import "BDMNativeAdViewCell.h"
 
 #import <BidMachine/BidMachine.h>
-#import <BidMachineApiCore/BidMachineApiCore.h>
 
 @interface RefreshControll : UIRefreshControl
 
