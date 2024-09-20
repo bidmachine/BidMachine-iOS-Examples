@@ -1,6 +1,5 @@
 #import "ViewController.h"
 #import <BidMachine/BidMachine.h>
-#import <BidMachineApiCore/BidMachineApiCore.h>
 
 @interface ViewController ()<BidMachineAdDelegate>
 

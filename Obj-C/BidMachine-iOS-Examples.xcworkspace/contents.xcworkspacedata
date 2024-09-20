@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:MediaAd/MediaAd.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:NativeAd/NativeAd.xcodeproj">
    </FileRef>
    <FileRef

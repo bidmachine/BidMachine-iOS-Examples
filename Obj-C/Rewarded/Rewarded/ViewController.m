@@ -1,6 +1,5 @@
 #import "ViewController.h"
 #import <BidMachine/BidMachine.h>
-#import <BidMachineApiCore/BidMachineApiCore.h>
 
 @interface ViewController ()<BidMachineAdDelegate>
 
@@ -19,7 +18,7 @@
 
 - (IBAction)loadRewarded:(id)sender {
     NSError *error = nil;
-    id<BidMachineRequestConfigurationProtocol> configuration = [BidMachineSdk.shared requestConfiguration: self.format error:&error];
+    id<BidMachineRequestConfigurationProtocol> configuration = [BidMachineSdk.shared requestConfiguration: self.placementFormat error:&error];
     if (error != nil) {
         return;
     }
@@ -43,7 +42,7 @@
     }
 }
 
-- (BidMachinePlacementFormat)format {
+- (BidMachinePlacementFormat)placementFormat {
     switch (self.rewardedTypeSegmentedControl.selectedSegmentIndex) {
         case 0: return BidMachinePlacementFormatRewarded;
         case 1: return BidMachinePlacementFormatRewardedStatic;
